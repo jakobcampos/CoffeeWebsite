@@ -16,13 +16,16 @@ const Navbar = () => {
                   height={32}
                   className="inline-block cursor-pointer lg:hidden"
               />
-              <ul className="hidden lg:flex items-center gap-8">
+              <ul className="hidden lg:flex items-center gap-6 sm:gap-7">
                   {NAV_LINKS.map((link) => (
-                      <li key={link.key} className="text-sm uppercase text-gray-50 flexCenter whitespace-nowrap cursor-pointer transition-all hover:font-bold">
-                          <Link href={link.href} className="flex items-center justify-center">
-                            {link.label}
-                          </Link>
-                      </li>
+                      <li key={link.key} className="text-xs font-sans font-normal tracking-widest uppercase text-gray-50 cursor-pointer transition-all">
+                      <Link href={link.href}>
+                          <span className="block pb-.5 border-b border-transparent hover:border-current transition duration-300 ease-in-out">
+                              {link.label}
+                          </span>
+                      </Link>
+                  </li>
+                  
                   ))}
               </ul>
           </div>

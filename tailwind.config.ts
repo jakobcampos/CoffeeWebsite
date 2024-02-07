@@ -7,6 +7,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'underline': '0 1px black',
+      },
       colors: {
         green: {
           50: '#30AF5B',
