@@ -9,26 +9,19 @@ type ButtonProps = {
 }
 
 const Button = ({ type, title, icon, variant, full }: ButtonProps) => {
+  // Responsive design adjustments
+  const sizingClasses = full ? 'w-full sm:w-3/4 md:w-1/3 lg:w-1/6' : '';
 
-  // Provide a default value for title if it's undefined. For example, use an empty string or a specific default text.
-  const imageAlt = title || ''; // Using 'Button icon' as a default alt text if title is not provided
+  // General hover opacity for buttons without icons
+  const hoverClasses = icon ? 'hover:opacity-30' : 'hover:opacity-70';
 
   return (
-    <button
-    className={`flexCenter gap-3 ${variant} ${full ? 'w-full' : ''} px-4 py-2`}
-      type={type}
-    >
-    
-    {icon && (
-        <Image src={icon} alt={imageAlt} width={17} height={19} />
-    )}
-
-    {title && (
-        <span className="bold-16 whitespace-nowrap cursor-pointer">{title}</span>
-    )}
-    
+    <button className={`flex items-center justify-center gap-3 ${variant} ${sizingClasses} ${hoverClasses} px-4 py-2 transition-all duration-300 ease-in-out`} type={type}>
+      {icon && <div className="inline-flex"><Image src={icon} alt={title || 'Button icon'} width={17} height={19}/></div>}
+      {title && <span className="text-xs font-sans font-normal tracking-widest uppercase text-gray-50 transition-all whitespace-nowrap cursor-pointer">{title}</span>}
     </button>
-  )
-}
+  );
+};
+
 
 export default Button

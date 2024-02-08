@@ -17,10 +17,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
-        <main className="relative overflow-hidden">
-          {children}
-        </main>
+        <div className='flex flex-col h-screen'>
+          <Navbar />
+          <main className="relative overflow-hidden">
+            {children}
+          </main>
+        </div>
         <Footer />
       </body>
     </html>
