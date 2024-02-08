@@ -14,12 +14,16 @@ body {
   font-family: Inter;
 }
 
+.bg-primary {
+  background-color: #F5F5F5;
+}
+
 @layer utilities {
   .btn_white { 
-    @apply  border-white bg-white px-8 py-3 text-green-50
+    @apply  border-[#fffcf4] bg-[#fffcf4] px-8 py-3 text-green-50
   }
   .btn_white_text  { 
-    @apply  border-white bg-white px-8 py-3 text-gray-90
+    @apply  border-[#fffcf4] bg-[#fffcf4] px-8 py-3 text-gray-90
   }
   .btn_green  { 
     @apply  border-green-50 bg-green-50 px-8 py-5 text-white
@@ -160,3 +164,8 @@ body {
 .hover\:shadow-underline:hover {
   box-shadow: 0 2px black;
 }
+
+.mobileNav {
+  height: calc(var(--vh, 1vh) * 100);
+}
+

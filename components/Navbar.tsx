@@ -1,19 +1,35 @@
-// Navbar.tsx
 'use client';
-
+import React, { useEffect, useState } from 'react';
 import Link from "next/link";
 import Image from "next/image";
-import Button from "./Button";
+import Button from './Button';
 import { NAV_LINKS } from "@/constants";
-import React, { useState } from 'react';
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    // State to manage if the mobile menu is open
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
+  useEffect(() => {
+    const updateVhProperty = () => {
+      const vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    };
+
+    window.addEventListener('resize', updateVhProperty);
+    updateVhProperty(); // Call on mount to set initial value
+
+    return () => window.removeEventListener('resize', updateVhProperty);
+  }, []);
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+  }, [isMenuOpen]);
 
     return (
-      <nav className="grid grid-cols-3 items-center justify-between lg:px-20 px-10 py-5 relative z-30">
+      <nav className="grid grid-cols-3 items-center justify-between bg-primary lg:px-20 px-10 py-5 relative z-30">
   
           {/* Left-aligned menu icon and navigation links */}
           <div className="flex items-center justify-start">
@@ -28,9 +44,9 @@ const Navbar = () => {
 
               {/* Mobile navigation menu */}
               {isMenuOpen && (
-                  <ul className="absolute top-full left-0 w-full bg-white lg:hidden">
+                  <ul className="mobileNav absolute top-full left-0 w-full bg-primary lg:hidden">
                       {NAV_LINKS.map((link) => (
-                          <li key={link.key} className="text-xs font-sans font-normal tracking-widest uppercase text-gray-700 py-2 px-10 cursor-pointer">
+                          <li key={link.key} className="text-sm font-sans font-normal tracking-widest uppercase text-gray-700 py-2 px-10 cursor-pointer">
                               <Link href={link.href}>
                                     <span className="inline-block pb-.5 border-b border-transparent hover:border-current transition duration-300 ease-in-out">
                                         {link.label}
