@@ -28,7 +28,7 @@ const Navbar = () => {
 
               {/* Mobile navigation menu */}
               {isMenuOpen && (
-                  <ul className="absolute top-full left-0 w-full bg-white lg:hidden">
+                  <ul className="absolute top-full left-0 w-full px-20 bg-white lg:hidden">
                       {NAV_LINKS.map((link) => (
                           <li key={link.key} className="text-xs font-sans font-normal tracking-widest uppercase text-gray-700 py-2 px-4 cursor-pointer">
                               <Link href={link.href}>
