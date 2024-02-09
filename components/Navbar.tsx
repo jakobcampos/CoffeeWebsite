@@ -36,8 +36,8 @@ const Navbar = () => {
           <Image
             src={isMenuOpen ? "/close.png" : "/menu.png"} // Assuming "/close.png" is your close icon
             alt={isMenuOpen ? "Close menu" : "Open menu"}
-            width={32}
-            height={32}
+            width={isMenuOpen ? 20 : 20}
+            height={16}
           />
         </div>
 
