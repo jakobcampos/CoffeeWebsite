@@ -25,7 +25,7 @@ const Navbar = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="grid grid-cols-3 items-center justify-between bg-primary lg:px-20 px-10 py-5 relative z-30">
+    <nav className="grid grid-cols-3 items-center justify-between bg-primary lg:px-20 md:px-10 sm:px-10 xs:px-10 px-4 py-5 relative z-30">
       {/* Left-aligned menu icon and navigation links */}
       <div className="flex items-center justify-start">
         <div
@@ -36,21 +36,21 @@ const Navbar = () => {
           <Image
             src={isMenuOpen ? "/close.png" : "/menu.png"} // Assuming "/close.png" is your close icon
             alt={isMenuOpen ? "Close menu" : "Open menu"}
-            width={isMenuOpen ? 20 : 20}
+            width={20}
             height={16}
           />
         </div>
 
         {/* Mobile navigation menu */}
         {isMenuOpen && (
-          <ul className="mobileNav absolute top-full left-0 w-full bg-primary lg:hidden">
+          <ul className="mobileNav absolute top-full left-0 w-full bg-primary opacity-95 lg:hidden">
             {NAV_LINKS.map((link) => (
               <li
                 key={link.key}
                 className="text-sm font-sans font-normal tracking-widest uppercase text-gray-700 py-2 px-10 cursor-pointer"
               >
                 <Link href={link.href}>
-                  <span className="inline-block pb-.5 border-b border-transparent hover:border-current transition duration-300 ease-in-out">
+                  <span className="inline-block mt-5 pb-.5 border-b border-transparent hover:border-current transition duration-300 ease-in-out">
                     {link.label}
                   </span>
                 </Link>
@@ -78,7 +78,7 @@ const Navbar = () => {
       {/* Centered logo */}
       <div className="flex justify-center">
         <Link href="/">
-          <Image src="/logo.png" alt="logo" width={75} height={75} />
+          <Image src="/logo.png" alt="logo" width={50} height={50} />
         </Link>
       </div>
 

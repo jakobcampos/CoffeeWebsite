@@ -6,7 +6,7 @@ const Hero = () => {
   return (
     <div className='block relative w-full h-[100vh]'>
         <Image src="/homeheader.png" alt="hero" layout='fill' objectFit='cover'/>
-        <div className='relative pt-[75vh] lg:pl-32 px-16'>
+        <div className='relative pt-[70vh] lg:pl-32 px-16'>
             <Button type="button" title='SHOP NOW' variant='btn_white_text' full />
         </div>
     </div>

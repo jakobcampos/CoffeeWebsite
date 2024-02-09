@@ -11,6 +11,8 @@ module.exports = {
         'underline': '0 1px black',
       },
       colors: {
+        'primary': '#F0EAD6',
+        'secondary': '#fffcf4',
         green: {
           50: '#30AF5B',
           90: '#292C27',

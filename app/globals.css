@@ -15,15 +15,15 @@ body {
 }
 
 .bg-primary {
-  background-color: #F5F5F5;
+  background-color: #F0EAD6;
 }
 
 @layer utilities {
   .btn_white { 
-    @apply  border-[#fffcf4] bg-[#fffcf4] px-8 py-3 text-green-50
+    @apply  border-primary bg-primary px-8 py-3 text-green-50
   }
   .btn_white_text  { 
-    @apply  border-[#fffcf4] bg-[#fffcf4] px-8 py-3 text-gray-90
+    @apply  border-secondary bg-secondary px-8 py-3 text-gray-90
   }
   .btn_green  { 
     @apply  border-green-50 bg-green-50 px-8 py-5 text-white
@@ -169,3 +169,9 @@ body {
   height: calc(var(--vh, 1vh) * 100);
 }
 
+/* Adjust this CSS to fit your design's specific needs */
+.icon-wrapper {
+  width: 17px; /* Default size */
+  height: 17px;
+  position: relative;
+}
